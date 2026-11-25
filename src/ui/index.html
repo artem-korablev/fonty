@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fonty</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/google.js" defer></script>
+  <script src="/workspaces.js" defer></script>
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <svg class="symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-collection" viewBox="0 0 24 24"><rect x="3.5" y="4" width="7" height="16" rx="1.6"/><rect x="13.5" y="4" width="7" height="16" rx="1.6"/><path d="M6 8h2m8 0h2"/></symbol>
+    <symbol id="i-google" viewBox="0 0 24 24"><path d="M19.5 8a8.2 8.2 0 1 0 1 4.3H13"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.5 5.7a4.6 4.6 0 0 0-6.5 0L12 7.6l-2-1.9a4.6 4.6 0 0 0-6.5 6.5l8.5 8.2 8.5-8.2a4.6 4.6 0 0 0 0-6.5Z"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20.5 4v5h-5M3.5 20v-5h5m11.4-6a8 8 0 0 0-13.5-2M4.1 15a8 8 0 0 0 13.5 2"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.3"/><path d="m16 16 4 4"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M5 6h14M5 12h14M5 18h14"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-sliders" viewBox="0 0 24 24"><path d="M4 7h5m4 0h7M4 17h10m4 0h2"/><circle cx="11" cy="7" r="2"/><circle cx="16" cy="17" r="2"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8v.2"/></symbol>
+    <symbol id="i-trend" viewBox="0 0 24 24"><path d="m3.8 16.7 6.1-5.9 3.9 3.4 6.4-7m-5.4 0h5.4v5.4"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16m-14 0 1 13h10l1-13M9 7V4h6v3m-5 4v5m4-5v5"/></symbol>
+    <symbol id="i-min" viewBox="0 0 24 24"><path d="M6 12h12"/></symbol>
+    <symbol id="i-max" viewBox="0 0 24 24"><rect x="6.5" y="6.5" width="11" height="11" rx="1"/></symbol>
+    <symbol id="i-restore" viewBox="0 0 24 24"><path d="M10 7V5h9v9h-2m-12-4h10v9H5z"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m7 7 10 10M17 7 7 17"/></symbol>
+    <symbol id="i-compare" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="7" height="13" rx="1.5"/><rect x="13.5" y="5.5" width="7" height="13" rx="1.5"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3.5 7.5A2 2 0 0 1 5.5 5.5h4l2 2h7a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M15 5V4H6a2 2 0 0 0-2 2v9h1"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-edit" viewBox="0 0 24 24"><path d="m5 15 10-10a2.1 2.1 0 0 1 3 3L8 18l-4 1zM13 7l3 3"/></symbol>
+  </svg>
+  <header class="title-bar" aria-label="Панель окна Fonty">
+    <span class="title-brand"><span class="title-mark" aria-hidden="true"><img class="title-letter" src="/mark.svg" width="24" height="24" alt=""></span>Fonty</span>
+    <details id="window-menu" class="window-menu">
+      <summary>Меню<svg aria-hidden="true"><use href="#i-chevron"/></svg></summary>
+      <div class="menu-items">
+        <button type="button" id="refresh"><svg><use href="#i-refresh"/></svg>Обновить мои шрифты</button>
+        <button type="button" data-menu-view="google"><svg><use href="#i-google"/></svg>Открыть Google Fonts</button>
+        <button type="button" id="about"><svg><use href="#i-info"/></svg>О Fonty</button>
+      </div>
+    </details>
+    <div class="window-controls" aria-label="Управление окном">
+      <button type="button" data-window="minimize" aria-label="Свернуть" title="Свернуть"><svg><use href="#i-min"/></svg></button>
+      <button type="button" data-window="maximize" aria-label="Развернуть" title="Развернуть"><svg><use href="#i-max"/></svg></button>
+      <button type="button" data-window="close" aria-label="Закрыть" title="Закрыть"><svg><use href="#i-close"/></svg></button>
+    </div>
+  </header>
+  <div class="shell">
+    <aside class="rail" aria-label="Коллекции">
+      <nav class="nav">
+        <button class="nav-item active" data-view="all" aria-pressed="true"><svg><use href="#i-collection"/></svg><span>Мои шрифты</span><span class="nav-count" id="count-all"></span></button>
+        <button class="nav-item" data-view="google" aria-pressed="false"><svg><use href="#i-google"/></svg><span>Google Fonts</span><span class="nav-count" id="count-google"></span></button>
+        <button class="nav-item" data-view="trends" aria-pressed="false"><svg><use href="#i-trend"/></svg><span>Тренды</span></button>
+        <button class="nav-item" data-view="favorites" aria-pressed="false"><svg><use href="#i-heart"/></svg><span>Избранное</span><span class="nav-count" id="count-favorites"></span></button>
+        <button class="nav-item" data-view="compare" aria-pressed="false"><svg><use href="#i-compare"/></svg><span>Сравнение</span><span class="nav-count" id="count-compare"></span></button>
+        <button class="nav-item" data-view="projects" aria-pressed="false"><svg><use href="#i-folder"/></svg><span>Подборки</span><span class="nav-count" id="count-projects"></span></button>
+      </nav>
+      <div class="rail-bottom">
+        <div class="local-state" id="local-state" data-scan="pending" role="status"><i aria-hidden="true"></i><span>Обновление…</span></div>
+      </div>
+    </aside>
+
+    <main>
+      <header class="page-header">
+        <h1 id="page-title">Мои шрифты</h1>
+      </header>
+
+      <div id="project-controls" class="project-controls" hidden>
+        <div id="project-picker-group" class="style-select">
+          <select id="project-picker" aria-label="Активная подборка"></select>
+          <svg aria-hidden="true"><use href="#i-chevron"/></svg>
+        </div>
+        <button id="project-new" type="button"><svg aria-hidden="true"><use href="#i-plus"/></svg>Новая подборка</button>
+        <button id="project-rename" class="square-action" type="button" aria-label="Переименовать подборку" title="Переименовать подборку"><svg aria-hidden="true"><use href="#i-edit"/></svg></button>
+        <button id="project-delete" class="square-action" type="button" aria-label="Удалить подборку" title="Удалить подборку"><svg aria-hidden="true"><use href="#i-trash"/></svg></button>
+      </div>
+
+      <section class="composer" id="composer" aria-labelledby="sample-label">
+        <div class="composer-controls">
+          <label id="sample-label" for="sample">Текст для примерки</label>
+          <div class="sample-entry">
+            <textarea id="sample" rows="2" maxlength="1000" spellcheck="false" placeholder="Введите слово или фразу"></textarea>
+          </div>
+          <div class="composer-bar">
+            <div class="presets" aria-label="Примеры текста">
+              <button type="button" data-preset="ru">Кириллица</button>
+              <button type="button" data-preset="en">Латиница</button>
+              <button type="button" data-preset="numbers">Цифры</button>
+            </div>
+            <div class="size">
+              <label for="size">Размер</label>
+              <input id="size" type="range" min="16" max="120" value="48" aria-label="Размер образца">
+              <output for="size" id="size-value">48 px</output>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="library" aria-labelledby="library-title">
+        <div class="library-head">
+          <div class="library-title">
+            <h2 id="library-title">Коллекция</h2><span id="result-count" aria-live="polite"></span>
+            <div id="trends-switch" class="trends-switch" aria-label="Рейтинг Google Fonts" hidden>
+              <button type="button" data-ranking="trending" aria-pressed="true">В тренде</button>
+              <button type="button" data-ranking="popular" aria-pressed="false">Популярные</button>
+            </div>
+          </div>
+          <div class="tools" id="collection-tools">
+            <div id="local-sort" class="style-select sort">
+              <select id="sort" aria-label="Сортировка локальных шрифтов" title="Дата определяется по появлению файла шрифта на диске">
+                <option value="recent">Сначала новые</option>
+                <option value="name">По названию</option>
+              </select>
+              <svg aria-hidden="true"><use href="#i-chevron"/></svg>
+            </div>
+            <label class="search"><svg><use href="#i-search"/></svg><input type="search" id="search" aria-label="Найти шрифт" placeholder="Найти шрифт"><kbd title="Ctrl + K">Ctrl K</kbd></label>
+            <label class="filter"><input id="cyrillic" type="checkbox"><span class="check" aria-hidden="true"></span>С кириллицей</label>
+            <div class="layout-switch" aria-label="Отображение">
+              <button type="button" data-layout="grid" aria-label="Карточки" title="Карточки" aria-pressed="true"><svg><use href="#i-grid"/></svg></button>
+              <button type="button" data-layout="list" aria-label="Список" title="Список" aria-pressed="false"><svg><use href="#i-list"/></svg></button>
+            </div>
+          </div>
+          <button id="clear-compare" class="subtle-button" type="button" hidden>Очистить сравнение</button>
+        </div>
+        <div id="rows" class="rows" aria-busy="true"></div>
+        <div id="empty" class="empty" hidden><p id="empty-title"></p><p id="empty-detail"></p><button id="clear-filters" type="button" hidden>Сбросить фильтры</button></div>
+        <button id="load-more" type="button" hidden>Показать ещё</button>
+        <p id="scan-note" class="scan-note" hidden></p>
+      </section>
+    </main>
+  </div>
+  <dialog id="about-dialog">
+    <form method="dialog">
+      <h2>Fonty</h2>
+      <p>В разделе «Мои шрифты» собраны шрифты, установленные в Windows.</p>
+      <p>Для предпросмотра Google Fonts нужен интернет. Рейтинги взяты из каталога Google Fonts на момент сборки.</p>
+      <details><summary>Лицензия компонента WebView2</summary><pre id="license"></pre></details>
+      <button>Готово</button>
+    </form>
+  </dialog>
+  <dialog id="remove-dialog" aria-labelledby="remove-title">
+    <form method="dialog">
+      <h2 id="remove-title">Удалить шрифт?</h2>
+      <p id="remove-message"></p>
+      <p id="remove-result" role="status" hidden></p>
+      <div class="dialog-actions">
+        <button type="submit" value="cancel" id="remove-cancel" autofocus>Отмена</button>
+        <button type="button" id="remove-confirm" class="danger">В корзину</button>
+      </div>
+    </form>
+  </dialog>
+  <dialog id="project-dialog" aria-labelledby="project-dialog-title">
+    <form id="project-form" method="dialog">
+      <h2 id="project-dialog-title"></h2>
+      <p id="project-dialog-detail" hidden></p>
+      <label id="project-target-field" class="project-field" hidden>Подборка<select id="project-target"></select></label>
+      <label id="project-name-field" class="project-field" hidden>Название<input id="project-name" maxlength="64" autocomplete="off" placeholder="Например, айдентика кофейни"></label>
+      <div class="dialog-actions">
+        <button type="button" id="project-cancel">Отмена</button>
+        <button type="submit" id="project-confirm">Сохранить</button>
+      </div>
+    </form>
+  </dialog>
+  <p id="status" class="status" role="status" hidden></p>
+</body>
+</html>
